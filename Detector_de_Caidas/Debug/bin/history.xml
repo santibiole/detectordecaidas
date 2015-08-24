@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=Detector_de_Caidas.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\Detector_de_Caidas -TC:\CooCox\CoIDE\configuration\ProgramData\Detector_de_Caidas/arm-gcc-link.ld -g">
+      <target file="Detector_de_Caidas.elf" lastModified="14f5ccf1b9d">
+         <source file="..\obj\stm32l1xx_gpio.o" lastModified="14f5ccf13a5"/>
+         <source file="..\obj\startup_stm32l1xx_md.o" lastModified="14f5ccf13eb"/>
+         <source file="..\obj\mma8451_i2c.o" lastModified="14f5ccf1445"/>
+         <source file="..\obj\stm32l1xx_exti.o" lastModified="14f5ccf1495"/>
+         <source file="..\obj\stm32l1xx_rcc.o" lastModified="14f5ccf1521"/>
+         <source file="..\obj\system_stm32l1xx.o" lastModified="14f5ccf1571"/>
+         <source file="..\obj\main.o" lastModified="14f5ccf15b7"/>
+         <source file="..\obj\stm32l1xx_syscfg.o" lastModified="14f5ccf1643"/>
+         <source file="..\obj\stm32l1xx_i2c.o" lastModified="14f5ccf1701"/>
+         <source file="..\obj\mma8451.o" lastModified="14f5ccf175b"/>
+         <source file="..\obj\bsp.o" lastModified="14f5ccf17d3"/>
+         <source file="..\obj\misc.o" lastModified="14f5ccf1837"/>
+         <source file="..\obj\stm32l1xx_tim.o" lastModified="14f5ccf1927"/>
+      </target>
+   </processor>
+</history>

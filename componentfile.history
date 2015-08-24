@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<History> 
+  <File usedCount="2" path="cox_driver/mma8451/mma8451.c"/>  
+  <File usedCount="2" path="cox_driver/mma8451/mma8451.h"/>  
+  <File usedCount="2" path="cmsis_lib/include/stm32l1xx_gpio.h"/>  
+  <File usedCount="2" path="cmsis_lib/include/stm32l1xx_rcc.h"/>  
+  <File usedCount="2" path="cmsis_boot/startup/startup_stm32l1xx_md.c"/>  
+  <File usedCount="2" path="cmsis/core_cm3.h"/>  
+  <File usedCount="2" path="cmsis_lib/include/misc.h"/>  
+  <File usedCount="2" path="cmsis_lib/include/stm32l1xx_syscfg.h"/>  
+  <File usedCount="2" path="cmsis_lib/source/stm32l1xx_syscfg.c"/>  
+  <File usedCount="2" path="cmsis_lib/source/misc.c"/>  
+  <File usedCount="2" path="cmsis/core_cmfunc.h"/>  
+  <File usedCount="2" path="cmsis/core_cminstr.h"/>  
+  <File usedCount="2" path="cmsis_boot/stm32l1xx.h"/>  
+  <File usedCount="2" path="cmsis_boot/system_stm32l1xx.c"/>  
+  <File usedCount="2" path="cmsis_boot/system_stm32l1xx.h"/>  
+  <File usedCount="2" path="cmsis_lib/source/stm32l1xx_rcc.c"/>  
+  <File usedCount="2" path="cmsis_lib/source/stm32l1xx_gpio.c"/>  
+  <File usedCount="2" path="cmsis_lib/include/stm32l1xx_i2c.h"/>  
+  <File usedCount="2" path="cmsis_lib/source/stm32l1xx_i2c.c"/>  
+  <File usedCount="2" path="cmsis_lib/include/stm32l1xx_tim.h"/>  
+  <File usedCount="2" path="cmsis_lib/source/stm32l1xx_tim.c"/>
+</History>
