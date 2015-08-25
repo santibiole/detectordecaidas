@@ -10,14 +10,13 @@ int main(void) {
 	bsp_init();
 
 	while (1) {
-
-		if (!sw_getState(0)) {
-			MMA8451_Init();
-		}
-		if (!sw_getState(1)) {
-			RegValue = I2C_RegRead(MMA8451ADD, CTRL_REG1);
-			RegValue = I2C_RegRead(MMA8451ADD, XYZ_DATA_CFG_REG);
-		}
+//		if (!sw_getState(0)) {
+//			MMA8451_Init();
+//		}
+//		if (!sw_getState(1)) {
+//			RegValue = I2C_RegRead(MMA8451ADD, CTRL_REG1);
+//			RegValue = I2C_RegRead(MMA8451ADD, XYZ_DATA_CFG_REG);
+//		}
 	}
 }
 
@@ -38,4 +37,9 @@ void APP_ISR_AF (void) {
 	while(1){
 
 	}
+}
+
+void APP_ISR_EP (void) {
+	led_toggle(0);
+	led_toggle(1);
 }

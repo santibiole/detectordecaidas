@@ -4,6 +4,7 @@
 #include "stm32l1xx_gpio.h"		// Perifericos de E/S
 #include "stm32l1xx_i2c.h"		// Inter Integrated Circuit
 #include "stm32l1xx_tim.h"		// Modulos Timers
+#include "stm32l1xx_exti.h"		// Interrupciones externas
 #include "stm32l1xx_syscfg.h"	// configuraciones Generales
 #include "misc.h"				// Vectores de interrupciones (NVIC)
 #include "bsp.h"
@@ -30,6 +31,7 @@ GPIO_TypeDef* botones_port[] = {GPIOA,GPIOA};
  */
 extern void APP_ISR_1ms (void);
 extern void APP_ISR_AF (void);
+extern void APP_ISR_EP (void);
 
 
 volatile uint16_t bsp_count_ms = 0; // Defino como volatile para que el compilador no interprete el while(bsp_count_ms) como un bucle infinito.
@@ -75,6 +77,14 @@ void I2C1_ER_IRQHandler(void) {
 	if(I2C_GetITStatus(I2C1, I2C_IT_AF) != RESET){
 		I2C_ClearITPendingBit(I2C1, I2C_IT_AF);
 		APP_ISR_AF();
+	}
+}
+
+void EXTI4_IRQHandler(void) {
+	if (EXTI_GetITStatus(EXTI_Line4) != RESET) { // Se verifica si corresponde al pin configurado.
+		EXTI_ClearFlag(EXTI_Line4); // Se limpiamos la bandera correspondiente a la interrupción.
+		// Rutina:
+		APP_ISR_EP();
 	}
 }
 
@@ -211,6 +221,9 @@ void bsp_sa0_init() {
 void bsp_sw_init() {
 	GPIO_InitTypeDef GPIO_InitStruct;
 
+	NVIC_InitTypeDef NVIC_InitStructure;
+	EXTI_InitTypeDef EXTI_InitStructure;
+
 	/* Habilitación del clock del periferico*/
 	RCC_AHBPeriphClockCmd(RCC_AHBPeriph_GPIOA, ENABLE);
 
@@ -220,6 +233,23 @@ void bsp_sw_init() {
 	GPIO_InitStruct.GPIO_OType = GPIO_OType_PP;
 	GPIO_InitStruct.GPIO_PuPd = GPIO_PuPd_DOWN;
 	GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+	// Configuración de interrupción
+	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOA, EXTI_PinSource4); // Pin 4 del puerto A, configurado para generar interrupción
+
+	/* Configuro EXTI Line */
+	EXTI_InitStructure.EXTI_Line = EXTI_Line4; // Interrupción en Línea 4.
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt; // Modo "Interrupción".
+	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling; // Interrupción por flanco descendente.
+	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+	EXTI_Init(&EXTI_InitStructure);
+
+	/* Habilito la EXTI Line Interrupt */
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI4_IRQn; // Qué el canal sea el de la interrupción 0.
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1; // Prioridad.
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0x01; // Canal habilitado, habilito la interrupción.
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE; // Habilito la interrupción.
+	NVIC_Init(&NVIC_InitStructure);
 }
 
 /*
