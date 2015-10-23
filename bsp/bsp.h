@@ -37,6 +37,20 @@ void bsp_delay_ms(uint16_t x);
 uint8_t sw_getState(uint16_t boton);
 
 /**
+ * @brief Devuelve el estado del boton
+ *  *
+ * @param boton Boton a consultar
+ */
+void uart_tx (char* data);
+
+/**
+ * @brief Devuelve el estado del boton
+ *  *
+ * @param boton Boton a consultar
+ */
+char uart_rx (void);
+
+/**
  * @brief Inicializacion de los servicios de BSP
  */
 void bsp_init();

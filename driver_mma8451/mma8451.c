@@ -13,6 +13,7 @@ void MMA8451_Init (void) {
 	  */
 	  I2C_RegWrite(MMA8451ADD, CTRL_REG1, ASLP_RATE_160MS+DATA_RATE_5MS);
 	  I2C_RegWrite(MMA8451ADD, XYZ_DATA_CFG_REG, FULL_SCALE_2G);
+	  MMA8451_Active();
 }
 
 void MMA8451_Active (void) {

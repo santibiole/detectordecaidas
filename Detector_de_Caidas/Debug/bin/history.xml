@@ -1,20 +1,22 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="arm-none-eabi-gcc -mcpu=cortex-m3 -mthumb -g -nostartfiles -Map=Detector_de_Caidas.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\Detector_de_Caidas -TC:\CooCox\CoIDE\configuration\ProgramData\Detector_de_Caidas/arm-gcc-link.ld -g">
-      <target file="Detector_de_Caidas.elf" lastModified="14f657e680b">
-         <source file="..\obj\stm32l1xx_gpio.o" lastModified="14f6571021e"/>
-         <source file="..\obj\startup_stm32l1xx_md.o" lastModified="14f65710262"/>
-         <source file="..\obj\mma8451_i2c.o" lastModified="14f657102bf"/>
-         <source file="..\obj\stm32l1xx_exti.o" lastModified="14f65710317"/>
-         <source file="..\obj\stm32l1xx_rcc.o" lastModified="14f6571039d"/>
-         <source file="..\obj\system_stm32l1xx.o" lastModified="14f657103f6"/>
-         <source file="..\obj\main.o" lastModified="14f657b8162"/>
-         <source file="..\obj\stm32l1xx_syscfg.o" lastModified="14f657104ac"/>
-         <source file="..\obj\stm32l1xx_i2c.o" lastModified="14f65710537"/>
-         <source file="..\obj\mma8451.o" lastModified="14f65710588"/>
-         <source file="..\obj\bsp.o" lastModified="14f657e662b"/>
-         <source file="..\obj\misc.o" lastModified="14f6571064a"/>
-         <source file="..\obj\stm32l1xx_tim.o" lastModified="14f65710723"/>
+      <target file="Detector_de_Caidas.elf" lastModified="15096efcbbc">
+         <source file="..\obj\stm32l1xx_gpio.o" lastModified="15096c515c2"/>
+         <source file="..\obj\startup_stm32l1xx_md.o" lastModified="15096c5161e"/>
+         <source file="..\obj\mma8451_i2c.o" lastModified="15096c51678"/>
+         <source file="..\obj\stm32l1xx_exti.o" lastModified="15096c516cf"/>
+         <source file="..\obj\stm32l1xx_rcc.o" lastModified="15096c517d7"/>
+         <source file="..\obj\system_stm32l1xx.o" lastModified="15096c518ba"/>
+         <source file="..\obj\main.o" lastModified="15096efc9b3"/>
+         <source file="..\obj\stm32l1xx_syscfg.o" lastModified="15096c5198e"/>
+         <source file="..\obj\stm32l1xx_usart.o" lastModified="15096c51a22"/>
+         <source file="..\obj\stm32l1xx_i2c.o" lastModified="15096c51b05"/>
+         <source file="..\obj\mma8451.o" lastModified="15096c51b5e"/>
+         <source file="..\obj\bsp.o" lastModified="15096e73c60"/>
+         <source file="..\obj\misc.o" lastModified="15096c51c8e"/>
+         <source file="..\obj\stm32l1xx_tim.o" lastModified="15096c51dac"/>
+         <source file="..\obj\sim908.o" lastModified="15096e73cc2"/>
       </target>
    </processor>
 </history>
